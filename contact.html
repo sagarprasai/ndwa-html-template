@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NDWA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="#" class="dropdown-toggle">Community</a>
+                        <ul class="submenu">
+                            <li><a href="#">Affiliations</a></li>
+                            <li><a href="#">Strategic Partners</a></li>
+                            <li><a href="#">General Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Contact Hero -->
+        <section class="archive-hero">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Reach out for questions, partnerships, or support.</p>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Contact</span>
+            </div>
+        </div>
+
+        <!-- Contact Content -->
+        <div class="container contact-container">
+            <div class="contact-main">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Contact Form</h2>
+                    <p class="form-intro">Send us a message and we'll respond within 2 business days.</p>
+                    
+                    <form class="contact-form-main" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+977-...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="inquiry">General Inquiry</option>
+                                <option value="membership">Membership</option>
+                                <option value="volunteer">Volunteer Opportunity</option>
+                                <option value="donate">Donate</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="gbv">Report GBV</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Contact Information</h2>
+
+                    <div class="contact-info-grid">
+                        <div class="contact-info-box">
+                            <h3>Main Office</h3>
+                            <p>
+                                <strong>Address:</strong><br>
+                                Kathmandu, Nepal
+                            </p>
+                            <p>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+977-1-4444444">+977-1-4444444</a>
+                            </p>
+                            <p>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a>
+                            </p>
+                            <p>
+                                <strong>Office Hours:</strong><br>
+                                Monday - Friday: 9:00 AM - 5:00 PM (NST)
+                            </p>
+                        </div>
+
+                        <div class="contact-info-box gbv-highlight">
+                            <h3>GBV Emergency Helpline</h3>
+                            <p>
+                                <strong>24/7 Confidential Support</strong>
+                            </p>
+                            <a href="tel:+977-1-4444444" class="helpline-number">+977-1-4444444</a>
+                            <p class="helpline-info">
+                                If you or someone you know has experienced gender-based violence, please reach out immediately. Our trained counselors are available around the clock to provide confidential support and assistance.
+                            </p>
+                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">
+                                Report Incident
+                            </a>
+                        </div>
+
+                        <div class="contact-info-box">
+                            <h3>Departments</h3>
+                            <ul class="contact-departments">
+                                <li>
+                                    <strong>Programs & Advocacy:</strong><br>
+                                    <a href="mailto:programs@ndwa.org.np">programs@ndwa.org.np</a>
+                                </li>
+                                <li>
+                                    <strong>Communications:</strong><br>
+                                    <a href="mailto:communications@ndwa.org.np">communications@ndwa.org.np</a>
+                                </li>
+                                <li>
+                                    <strong>Finance:</strong><br>
+                                    <a href="mailto:finance@ndwa.org.np">finance@ndwa.org.np</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-info-box">
+                            <h3>Ways to Support</h3>
+                            <ul class="support-list">
+                                <li><a href="#" class="btn btn-outline">Become a Member</a></li>
+                                <li><a href="#" class="btn btn-outline">Volunteer</a></li>
+                                <li><a href="#" class="btn btn-outline">Donate</a></li>
+                                <li><a href="#" class="btn btn-outline">Partner With Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="social-media-section">
+                        <h3>Follow Us</h3>
+                        <p>Stay updated on our latest news and initiatives</p>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link facebook">Facebook</a>
+                            <a href="#" class="social-link twitter">Twitter</a>
+                            <a href="#" class="social-link instagram">Instagram</a>
+                            <a href="#" class="social-link youtube">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="contact-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Frequently Asked Questions</h3>
+                    <ul class="faq-list">
+                        <li><a href="#">How can I become a member?</a></li>
+                        <li><a href="#">How can I volunteer?</a></li>
+                        <li><a href="#">How do I donate?</a></li>
+                        <li><a href="#">Who can I contact for partnerships?</a></li>
+                        <li><a href="#">How is my data handled?</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Quick Links</h3>
+                    <ul class="quick-links-list">
+                        <li><a href="about.html">About NDWA</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="news-events.html">News & Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget gbv-helpline">
+                    <h3 class="widget-title">Need Help?</h3>
+                    <div class="gbv-info">
+                        <h4>Report GBV</h4>
+                        <p>Confidential 24/7 support</p>
+                        <a href="tel:+977-1-4444444" class="gbv-phone">+977-1-4444444</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p>Kathmandu, Nepal</p>
+                        <p>Helpline: <a href="tel:+977-1-4444444">+977-1-4444444</a></p>
+                        <p>Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

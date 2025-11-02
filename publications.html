@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - NDWA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="#" class="dropdown-toggle">Community</a>
+                        <ul class="submenu">
+                            <li><a href="#">Affiliations</a></li>
+                            <li><a href="#">Strategic Partners</a></li>
+                            <li><a href="#">General Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Archive Hero -->
+        <section class="archive-hero">
+            <h1>Publications</h1>
+            <p>Research, reports, and resources from NDWA</p>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Publications</span>
+            </div>
+        </div>
+
+        <!-- Publications Content -->
+        <div class="container archive-container">
+            <div class="archive-main">
+                <!-- Filters -->
+                <div class="archive-filters">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search publications...">
+                    <div class="filter-group">
+                        <select id="typeFilter" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="report">Reports</option>
+                            <option value="toolkit">Toolkits</option>
+                            <option value="research">Research</option>
+                            <option value="guide">Guides</option>
+                        </select>
+                        <select id="yearFilter" class="filter-select">
+                            <option value="">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Publications Grid -->
+                <div class="publications-grid" id="publicationsGrid">
+                    <!-- Publication Cards -->
+                    <article class="publication-card" data-type="toolkit" data-year="2025">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Toolkit</span>
+                            <h3 class="publication-title">NDWA Advocacy Toolkit</h3>
+                            <p class="publication-description">A comprehensive guide for women and organizations to advocate for rights, accessibility, and inclusion.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2025</span>
+                                <span class="publication-pages">45 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-type="report" data-year="2024">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Report</span>
+                            <h3 class="publication-title">Annual Report 2024</h3>
+                            <p class="publication-description">Comprehensive review of NDWA's programs, achievements, and impact during 2024.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2024</span>
+                                <span class="publication-pages">60 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-type="research" data-year="2024">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Research</span>
+                            <h3 class="publication-title">Women with Disabilities in Nepal: Status and Needs Assessment</h3>
+                            <p class="publication-description">Baseline research on the socioeconomic status and needs of women with disabilities across provinces.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2024</span>
+                                <span class="publication-pages">85 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-type="guide" data-year="2023">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Guide</span>
+                            <h3 class="publication-title">Accessible Communication Guidelines</h3>
+                            <p class="publication-description">Step-by-step guide for creating accessible materials and communications for women with disabilities.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2023</span>
+                                <span class="publication-pages">35 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-type="toolkit" data-year="2023">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Toolkit</span>
+                            <h3 class="publication-title">Leadership Training Manual</h3>
+                            <p class="publication-description">Training manual for building leadership capacity of women with disabilities.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2023</span>
+                                <span class="publication-pages">72 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-type="report" data-year="2023">
+                        <div class="publication-thumbnail">
+                            <img src="https://picsum.photos/240/300" alt="Publication">
+                        </div>
+                        <div class="publication-info">
+                            <span class="publication-type">Report</span>
+                            <h3 class="publication-title">Annual Report 2023</h3>
+                            <p class="publication-description">NDWA's work, achievements, and lessons learned during 2023.</p>
+                            <div class="publication-meta">
+                                <span class="publication-year">2023</span>
+                                <span class="publication-pages">55 pages</span>
+                            </div>
+                            <a href="publication-single.html" class="btn btn-primary">Download</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn prev">← Previous</button>
+                    <div class="pagination-numbers">
+                        <button class="pagination-number active" data-page="1">1</button>
+                        <button class="pagination-number" data-page="2">2</button>
+                    </div>
+                    <button class="pagination-btn next">Next →</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="archive-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Publication Types</h3>
+                    <ul class="category-list">
+                        <li><a href="#" data-type="report">Reports (3)</a></li>
+                        <li><a href="#" data-type="toolkit">Toolkits (2)</a></li>
+                        <li><a href="#" data-type="research">Research (1)</a></li>
+                        <li><a href="#" data-type="guide">Guides (1)</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Most Downloaded</h3>
+                    <div class="posts-list">
+                        <div class="post-item">
+                            <h4 class="post-title">NDWA Advocacy Toolkit</h4>
+                            <p class="post-meta">1,240 downloads</p>
+                        </div>
+                        <div class="post-item">
+                            <h4 class="post-title">Annual Report 2024</h4>
+                            <p class="post-meta">856 downloads</p>
+                        </div>
+                        <div class="post-item">
+                            <h4 class="post-title">Women Status Assessment</h4>
+                            <p class="post-meta">632 downloads</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p>Kathmandu, Nepal</p>
+                        <p>Helpline: <a href="tel:+977-1-4444444">+977-1-4444444</a></p>
+                        <p>Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

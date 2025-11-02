@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - NDWA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header (same as other pages) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="#" class="dropdown-toggle">Community</a>
+                        <ul class="submenu">
+                            <li><a href="#">Affiliations</a></li>
+                            <li><a href="#">Strategic Partners</a></li>
+                            <li><a href="#">General Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Archive Hero -->
+        <section class="archive-hero">
+            <h1>News & Events</h1>
+            <p>Stay updated with latest news, events, and updates from NDWA</p>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">News & Events</span>
+            </div>
+        </div>
+
+        <!-- Archive Content -->
+        <div class="container archive-container">
+            <div class="archive-main">
+                <!-- Filters -->
+                <div class="archive-filters">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search news & events...">
+                    <div class="filter-group">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="news">News</option>
+                            <option value="event">Events</option>
+                            <option value="workshop">Workshops</option>
+                            <option value="advocacy">Advocacy</option>
+                        </select>
+                        <select id="yearFilter" class="filter-select">
+                            <option value="">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Archive Grid -->
+                <div class="archive-grid" id="archiveGrid">
+                    <!-- News/Events Cards -->
+                    <article class="archive-card" data-category="news" data-year="2025">
+                        <img src="https://picsum.photos/640/360" alt="News" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">News</span>
+                            <span class="archive-date">15 Jun 2025</span>
+                            <h3 class="archive-card-title">Update on Disability Rights Issues</h3>
+                            <p class="archive-card-excerpt">NDWA releases a position statement and calls for inclusive services across provinces.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-card" data-category="event" data-year="2025">
+                        <img src="https://picsum.photos/640/360" alt="Event" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">Event</span>
+                            <span class="archive-date">28 May 2025</span>
+                            <h3 class="archive-card-title">Leadership Workshop Held in Province 2</h3>
+                            <p class="archive-card-excerpt">Women leaders with disabilities participated in a two-day leadership development training.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-card" data-category="advocacy" data-year="2025">
+                        <img src="https://picsum.photos/640/360" alt="Advocacy" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">Advocacy</span>
+                            <span class="archive-date">12 May 2025</span>
+                            <h3 class="archive-card-title">GBV Awareness Campaign in Surkhet</h3>
+                            <p class="archive-card-excerpt">Community mobilizers engaged local stakeholders to prevent and respond to GBV.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-card" data-category="workshop" data-year="2025">
+                        <img src="https://picsum.photos/640/360" alt="Workshop" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">Workshop</span>
+                            <span class="archive-date">05 May 2025</span>
+                            <h3 class="archive-card-title">Economic Empowerment Workshop</h3>
+                            <p class="archive-card-excerpt">Training on entrepreneurship and financial literacy for women with disabilities.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-card" data-category="news" data-year="2024">
+                        <img src="https://picsum.photos/640/360" alt="News" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">News</span>
+                            <span class="archive-date">20 Dec 2024</span>
+                            <h3 class="archive-card-title">International Day of Persons with Disabilities</h3>
+                            <p class="archive-card-excerpt">NDWA joins global celebration and calls for greater inclusion and accessibility.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-card" data-category="event" data-year="2024">
+                        <img src="https://picsum.photos/640/360" alt="Event" class="archive-card-image">
+                        <div class="archive-card-content">
+                            <span class="archive-category">Event</span>
+                            <span class="archive-date">15 Nov 2024</span>
+                            <h3 class="archive-card-title">Women's Empowerment Summit 2024</h3>
+                            <p class="archive-card-excerpt">Annual conference bringing together women leaders with disabilities from across Nepal.</p>
+                            <a href="news-single.html" class="read-more-link">Read full story →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn prev">← Previous</button>
+                    <div class="pagination-numbers">
+                        <button class="pagination-number active" data-page="1">1</button>
+                        <button class="pagination-number" data-page="2">2</button>
+                        <button class="pagination-number" data-page="3">3</button>
+                    </div>
+                    <button class="pagination-btn next">Next →</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="archive-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent News</h3>
+                    <div class="posts-list">
+                        <div class="post-item">
+                            <p class="post-date">15 Jun 2025</p>
+                            <h4 class="post-title">Disability Rights Issues</h4>
+                        </div>
+                        <div class="post-item">
+                            <p class="post-date">28 May 2025</p>
+                            <h4 class="post-title">Leadership Workshop</h4>
+                        </div>
+                        <div class="post-item">
+                            <p class="post-date">12 May 2025</p>
+                            <h4 class="post-title">GBV Campaign</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget gbv-helpline">
+                    <h3 class="widget-title">Need Help?</h3>
+                    <div class="gbv-info">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                        <h4>Report Gender-Based Violence</h4>
+                        <p>24/7 support available</p>
+                        <a href="tel:+977-1-4444444" class="gbv-phone">+977-1-4444444</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p>Kathmandu, Nepal</p>
+                        <p>Helpline: <a href="tel:+977-1-4444444">+977-1-4444444</a></p>
+                        <p>Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

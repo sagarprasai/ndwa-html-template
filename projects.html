@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work & Projects - NDWA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="#" class="dropdown-toggle">Community</a>
+                        <ul class="submenu">
+                            <li><a href="#">Affiliations</a></li>
+                            <li><a href="#">Strategic Partners</a></li>
+                            <li><a href="#">General Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Archive Hero -->
+        <section class="archive-hero">
+            <h1>Our Work & Projects</h1>
+            <p>Programs and initiatives driving positive change for women with disabilities</p>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Our Work</span>
+            </div>
+        </div>
+
+        <!-- Projects Content -->
+        <div class="container archive-container">
+            <div class="archive-main">
+                <!-- Filters -->
+                <div class="archive-filters">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Search projects...">
+                    <div class="filter-group">
+                        <select id="sectorFilter" class="filter-select">
+                            <option value="">All Sectors</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="economic">Economic Empowerment</option>
+                            <option value="gbv">GBV Prevention</option>
+                            <option value="advocacy">Advocacy</option>
+                        </select>
+                        <select id="statusFilter" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project Cards -->
+                    <article class="project-card" data-sector="advocacy" data-status="ongoing">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Ongoing</span>
+                            <span class="project-sector">Advocacy</span>
+                            <h3 class="project-title">Disability Rights Advocacy Initiative</h3>
+                            <p class="project-description">Comprehensive advocacy campaign for inclusive policies and accessibility rights across all provinces.</p>
+                            <div class="project-meta">
+                                <span class="project-location">All 7 Provinces</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-sector="economic" data-status="ongoing">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Ongoing</span>
+                            <span class="project-sector">Economic Empowerment</span>
+                            <h3 class="project-title">Economic Empowerment Program</h3>
+                            <p class="project-description">Vocational training and microfinance support for women with disabilities to enhance economic participation.</p>
+                            <div class="project-meta">
+                                <span class="project-location">Bagmati, Madhesh</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-sector="education" data-status="ongoing">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Ongoing</span>
+                            <span class="project-sector">Education</span>
+                            <h3 class="project-title">Inclusive Education Initiative</h3>
+                            <p class="project-description">Working with schools to ensure accessibility and inclusion of girls with disabilities in education.</p>
+                            <div class="project-meta">
+                                <span class="project-location">Central Region</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-sector="gbv" data-status="ongoing">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Ongoing</span>
+                            <span class="project-sector">GBV Prevention</span>
+                            <h3 class="project-title">Gender-Based Violence Prevention Program</h3>
+                            <p class="project-description">Community mobilization and survivor support for preventing and responding to GBV.</p>
+                            <div class="project-meta">
+                                <span class="project-location">All Provinces</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-sector="health" data-status="completed">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Completed</span>
+                            <span class="project-sector">Health</span>
+                            <h3 class="project-title">Healthcare Accessibility Project</h3>
+                            <p class="project-description">Improved access to quality healthcare services for women and girls with disabilities.</p>
+                            <div class="project-meta">
+                                <span class="project-location">Bagmati Region</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-sector="advocacy" data-status="completed">
+                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
+                        <div class="project-content">
+                            <span class="project-status">Completed</span>
+                            <span class="project-sector">Advocacy</span>
+                            <h3 class="project-title">Policy Advocacy for Inclusive Laws</h3>
+                            <p class="project-description">Advocacy efforts resulting in passage of laws protecting rights of women with disabilities.</p>
+                            <div class="project-meta">
+                                <span class="project-location">National Level</span>
+                            </div>
+                            <a href="project-single.html" class="read-more-link">View Details →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn prev">← Previous</button>
+                    <div class="pagination-numbers">
+                        <button class="pagination-number active" data-page="1">1</button>
+                        <button class="pagination-number" data-page="2">2</button>
+                    </div>
+                    <button class="pagination-btn next">Next →</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="archive-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Focus Sectors</h3>
+                    <ul class="category-list">
+                        <li><a href="#" data-sector="advocacy">Advocacy</a></li>
+                        <li><a href="#" data-sector="economic">Economic Empowerment</a></li>
+                        <li><a href="#" data-sector="education">Education</a></li>
+                        <li><a href="#" data-sector="gbv">GBV Prevention</a></li>
+                        <li><a href="#" data-sector="health">Health</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Project Status</h3>
+                    <ul class="category-list">
+                        <li><a href="#" data-status="ongoing">Ongoing Projects</a></li>
+                        <li><a href="#" data-status="completed">Completed Projects</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p>Kathmandu, Nepal</p>
+                        <p>Helpline: <a href="tel:+977-1-4444444">+977-1-4444444</a></p>
+                        <p>Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
