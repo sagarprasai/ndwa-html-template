@@ -98,166 +98,182 @@
         </div>
 
         <!-- Contact Content -->
-        <div class="container contact-container">
-            <div class="contact-main">
-                <!-- Contact Form -->
-                <div class="contact-form-section">
-                    <h2>Contact Form</h2>
-                    <p class="form-intro">Send us a message and we'll respond within 2 business days.</p>
-                    
-                    <form class="contact-form-main" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Your name">
-                        </div>
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form Column (65%) -->
+                <div class="contact-form-column">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <h2>Contact Form</h2>
+                        <p class="form-intro">Send us a message and we'll respond within 2 business days.</p>
+                        
+                        <form class="contact-form-main" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+977-...">
-                        </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+977-...">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="inquiry">General Inquiry</option>
-                                <option value="membership">Membership</option>
-                                <option value="volunteer">Volunteer Opportunity</option>
-                                <option value="donate">Donate</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="gbv">Report GBV</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="inquiry">General Inquiry</option>
+                                    <option value="membership">Membership</option>
+                                    <option value="volunteer">Volunteer Opportunity</option>
+                                    <option value="donate">Donate</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="gbv">Report GBV</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
+                            </div>
 
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Departments Section Below Form -->
+                    <div class="departments-section">
+                        <h3>Our Departments</h3>
+                        <div class="departments-grid">
+                            <div class="department-box">
+                                <div class="department-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <h4>Programs & Advocacy</h4>
+                                <p>Contact our programs team</p>
+                                <a href="mailto:programs@ndwa.org.np">programs@ndwa.org.np</a>
+                            </div>
+                            <div class="department-box">
+                                <div class="department-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h4>Communications</h4>
+                                <p>Media and communications inquiries</p>
+                                <a href="mailto:communications@ndwa.org.np">communications@ndwa.org.np</a>
+                            </div>
+                            <div class="department-box">
+                                <div class="department-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <h4>Finance</h4>
+                                <p>Financial matters and donations</p>
+                                <a href="mailto:finance@ndwa.org.np">finance@ndwa.org.np</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Contact Information -->
+                <!-- Contact Information (35%) -->
                 <div class="contact-info-section">
                     <h2>Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>PO Box: 1775, House no: 37, Kalopul Marga<br>Kalopul, Kathmandu, Nepal</p>
+                        </div>
+                    </div>
 
-                    <div class="contact-info-grid">
-                        <div class="contact-info-box">
-                            <h3>Main Office</h3>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
                             <p>
-                                <strong>Address:</strong><br>
-                                Kathmandu, Nepal
-                            </p>
-                            <p>
-                                <strong>Phone:</strong><br>
-                                <a href="tel:+977-1-4444444">+977-1-4444444</a>
-                            </p>
-                            <p>
-                                <strong>Email:</strong><br>
-                                <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a>
-                            </p>
-                            <p>
-                                <strong>Office Hours:</strong><br>
-                                Monday - Friday: 9:00 AM - 5:00 PM (NST)
+                                <a href="tel:+977-1-4535131">01-4535131</a><br>
+                                <a href="tel:+977-1-4538342">01-4538342</a>
                             </p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-box gbv-highlight">
-                            <h3>GBV Emergency Helpline</h3>
-                            <p>
-                                <strong>24/7 Confidential Support</strong>
-                            </p>
-                            <a href="tel:+977-1-4444444" class="helpline-number">+977-1-4444444</a>
-                            <p class="helpline-info">
-                                If you or someone you know has experienced gender-based violence, please reach out immediately. Our trained counselors are available around the clock to provide confidential support and assistance.
-                            </p>
-                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">
-                                Report Incident
-                            </a>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-
-                        <div class="contact-info-box">
-                            <h3>Departments</h3>
-                            <ul class="contact-departments">
-                                <li>
-                                    <strong>Programs & Advocacy:</strong><br>
-                                    <a href="mailto:programs@ndwa.org.np">programs@ndwa.org.np</a>
-                                </li>
-                                <li>
-                                    <strong>Communications:</strong><br>
-                                    <a href="mailto:communications@ndwa.org.np">communications@ndwa.org.np</a>
-                                </li>
-                                <li>
-                                    <strong>Finance:</strong><br>
-                                    <a href="mailto:finance@ndwa.org.np">finance@ndwa.org.np</a>
-                                </li>
-                            </ul>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:ndwa.2009@gmail.com">ndwa.2009@gmail.com</a></p>
                         </div>
+                    </div>
 
-                        <div class="contact-info-box">
-                            <h3>Ways to Support</h3>
-                            <ul class="support-list">
-                                <li><a href="#" class="btn btn-outline">Become a Member</a></li>
-                                <li><a href="#" class="btn btn-outline">Volunteer</a></li>
-                                <li><a href="#" class="btn btn-outline">Donate</a></li>
-                                <li><a href="#" class="btn btn-outline">Partner With Us</a></li>
-                            </ul>
+                    <div class="contact-info-item office-hours-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday<br>9:00 AM - 5:00 PM (NST)</p>
                         </div>
                     </div>
 
                     <!-- Social Media -->
                     <div class="social-media-section">
                         <h3>Follow Us</h3>
-                        <p>Stay updated on our latest news and initiatives</p>
-                        <div class="social-links-large">
-                            <a href="#" class="social-link facebook">Facebook</a>
-                            <a href="#" class="social-link twitter">Twitter</a>
-                            <a href="#" class="social-link instagram">Instagram</a>
-                            <a href="#" class="social-link youtube">YouTube</a>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/Nepal-Disabled-Women-Association-NDWA-699325136823096/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon youtube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item gbv-emergency">
+                        <div class="contact-icon emergency-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GBV Emergency Helpline</h3>
+                            <p class="helpline-text">24/7 Confidential Support (Toll-Free)</p>
+                            <p class="helpline-number"><a href="tel:9801571225">9801571225</a></p>
+                            <a href="#" class="btn btn-primary btn-small">Report Incident</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <aside class="contact-sidebar">
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Frequently Asked Questions</h3>
-                    <ul class="faq-list">
-                        <li><a href="#">How can I become a member?</a></li>
-                        <li><a href="#">How can I volunteer?</a></li>
-                        <li><a href="#">How do I donate?</a></li>
-                        <li><a href="#">Who can I contact for partnerships?</a></li>
-                        <li><a href="#">How is my data handled?</a></li>
-                    </ul>
+            <!-- Google Map Section -->
+            <div class="map-section">
+                <h2>Find Us</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.146130593567!2d85.33428667625671!3d27.712774076179482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19531b99d925%3A0x8718bb926edfbab0!2sNepal%20Disabled%20Women%20Association!5e0!3m2!1sen!2snp!4v1762077324917!5m2!1sen!2snp" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Nepal Disabled Women Association - NDWA Office Location">
+                    </iframe>
                 </div>
-
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Quick Links</h3>
-                    <ul class="quick-links-list">
-                        <li><a href="about.html">About NDWA</a></li>
-                        <li><a href="projects.html">Our Work</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="news-events.html">News & Events</a></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget gbv-helpline">
-                    <h3 class="widget-title">Need Help?</h3>
-                    <div class="gbv-info">
-                        <h4>Report GBV</h4>
-                        <p>Confidential 24/7 support</p>
-                        <a href="tel:+977-1-4444444" class="gbv-phone">+977-1-4444444</a>
-                    </div>
-                </div>
-            </aside>
+            </div>
         </div>
     </main>
 

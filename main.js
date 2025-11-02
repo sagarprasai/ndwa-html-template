@@ -472,7 +472,63 @@ window.printPage = () => {
 }
 
 // ================================================================
-// 15. GENERAL UTILITIES
+// 15. COPY TO CLIPBOARD FUNCTIONALITY
+// ================================================================
+
+window.copyToClipboard = function(event) {
+  const url = window.location.href
+  const copyBtn = event?.target.closest('.copy-link') || document.querySelector('.copy-link')
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      // Show feedback
+      if (copyBtn) {
+        const originalText = copyBtn.querySelector('span').textContent
+        copyBtn.querySelector('span').textContent = 'Copied!'
+        copyBtn.style.background = '#28a745'
+        copyBtn.style.borderColor = '#28a745'
+        copyBtn.style.color = 'white'
+        
+        setTimeout(() => {
+          copyBtn.querySelector('span').textContent = originalText
+          copyBtn.style.background = ''
+          copyBtn.style.borderColor = ''
+          copyBtn.style.color = ''
+        }, 2000)
+      }
+    }).catch(err => {
+      console.error('Failed to copy:', err)
+      alert('Failed to copy link. Please try again.')
+    })
+  } else {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea')
+    textArea.value = url
+    textArea.style.position = 'fixed'
+    textArea.style.opacity = '0'
+    document.body.appendChild(textArea)
+    textArea.select()
+    
+    try {
+      document.execCommand('copy')
+      if (copyBtn) {
+        const originalText = copyBtn.querySelector('span').textContent
+        copyBtn.querySelector('span').textContent = 'Copied!'
+        setTimeout(() => {
+          copyBtn.querySelector('span').textContent = originalText
+        }, 2000)
+      }
+    } catch (err) {
+      console.error('Fallback copy failed:', err)
+      alert('Failed to copy link. Please try again.')
+    }
+    
+    document.body.removeChild(textArea)
+  }
+}
+
+// ================================================================
+// 16. GENERAL UTILITIES
 // ================================================================
 
 // Debounce function for resize events
@@ -497,7 +553,7 @@ window.addEventListener(
 )
 
 // ================================================================
-// 16. INITIALIZATION
+// 17. INITIALIZATION
 // ================================================================
 
 console.log("[v0] NDWA Static Pages JavaScript initialized")
