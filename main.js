@@ -75,6 +75,7 @@ function initializeFilters() {
   const typeFilter = document.getElementById("typeFilter")
   const sectorFilter = document.getElementById("sectorFilter")
   const statusFilter = document.getElementById("statusFilter")
+  const partnerFilter = document.getElementById("partnerFilter")
 
   const archiveGrid = document.getElementById("archiveGrid")
   const projectsGrid = document.getElementById("projectsGrid")
@@ -91,8 +92,9 @@ function initializeFilters() {
     const typeValue = typeFilter ? typeFilter.value : ""
     const sectorValue = sectorFilter ? sectorFilter.value : ""
     const statusValue = statusFilter ? statusFilter.value : ""
+    const partnerValue = partnerFilter ? partnerFilter.value : ""
 
-    const cards = grid.querySelectorAll("[data-category], [data-type], [data-sector]")
+    const cards = grid.querySelectorAll("[data-category], [data-type], [data-sector], [data-year], [data-partner], .project-card, .archive-card")
 
     let visibleCount = 0
 
@@ -103,6 +105,7 @@ function initializeFilters() {
       const cardType = card.getAttribute("data-type") || ""
       const cardSector = card.getAttribute("data-sector") || ""
       const cardStatus = card.getAttribute("data-status") || ""
+      const cardPartner = card.getAttribute("data-partner") || ""
       const cardText = card.textContent.toLowerCase()
 
       // Check if card matches filters
@@ -112,8 +115,9 @@ function initializeFilters() {
       const matchesType = !typeValue || cardType === typeValue
       const matchesSector = !sectorValue || cardSector === sectorValue
       const matchesStatus = !statusValue || cardStatus === statusValue
+      const matchesPartner = !partnerValue || cardPartner === partnerValue
 
-      if (matchesSearch && matchesCategory && matchesYear && matchesType && matchesSector && matchesStatus) {
+      if (matchesSearch && matchesCategory && matchesYear && matchesType && matchesSector && matchesStatus && matchesPartner) {
         card.style.display = ""
         card.classList.add("animate-fadeIn")
         visibleCount++
@@ -134,6 +138,7 @@ function initializeFilters() {
   if (typeFilter) typeFilter.addEventListener("change", filterCards)
   if (sectorFilter) sectorFilter.addEventListener("change", filterCards)
   if (statusFilter) statusFilter.addEventListener("change", filterCards)
+  if (partnerFilter) partnerFilter.addEventListener("change", filterCards)
 }
 
 // Initialize filters when DOM is ready

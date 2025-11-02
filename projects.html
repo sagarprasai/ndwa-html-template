@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Work & Projects - NDWA</title>
+    <link rel="icon" type="image/png" href="images/ndwa.png">
+    <link rel="shortcut icon" type="image/png" href="images/ndwa.png">
+    <link rel="apple-touch-icon" href="images/ndwa.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -95,7 +98,7 @@
         </div>
 
         <!-- Projects Content -->
-        <div class="container archive-container">
+        <div class="container">
             <div class="archive-main">
                 <!-- Filters -->
                 <div class="archive-filters">
@@ -114,95 +117,213 @@
                             <option value="ongoing">Ongoing</option>
                             <option value="completed">Completed</option>
                         </select>
+                        <select id="yearFilter" class="filter-select">
+                            <option value="">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        <select id="partnerFilter" class="filter-select">
+                            <option value="">All Partners</option>
+                            <option value="unicef">UNICEF</option>
+                            <option value="plan">Plan Nepal</option>
+                            <option value="hi">Handicap International</option>
+                            <option value="cbm">CBM</option>
+                            <option value="fairmed">FAIRMED</option>
+                            <option value="mowcsw">MoWCSW</option>
+                            <option value="dpod">DPOD</option>
+                        </select>
                     </div>
                 </div>
 
                 <!-- Projects Grid -->
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Project Cards -->
-                    <article class="project-card" data-sector="advocacy" data-status="ongoing">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Ongoing</span>
-                            <span class="project-sector">Advocacy</span>
-                            <h3 class="project-title">Disability Rights Advocacy Initiative</h3>
-                            <p class="project-description">Comprehensive advocacy campaign for inclusive policies and accessibility rights across all provinces.</p>
-                            <div class="project-meta">
-                                <span class="project-location">All 7 Provinces</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="advocacy" data-status="ongoing" data-year="2025" data-partner="unicef">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/A2J-e1756287310374-768x486.jpg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">Advocacy</span>
+                                </div>
+                                <h3 class="project-title">Disability Rights Advocacy Initiative</h3>
+                                <p class="project-period"><strong>Project Period:</strong> January 2024 - December 2025</p>
+                                <p class="project-description">Comprehensive advocacy campaign for inclusive policies and accessibility rights across all provinces.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>All 7 Provinces</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/UNICEF.png" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
 
-                    <article class="project-card" data-sector="economic" data-status="ongoing">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Ongoing</span>
-                            <span class="project-sector">Economic Empowerment</span>
-                            <h3 class="project-title">Economic Empowerment Program</h3>
-                            <p class="project-description">Vocational training and microfinance support for women with disabilities to enhance economic participation.</p>
-                            <div class="project-meta">
-                                <span class="project-location">Bagmati, Madhesh</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="economic" data-status="ongoing" data-year="2024" data-partner="plan">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/YP-1-e1755252759488.jpeg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">Economic Empowerment</span>
+                                </div>
+                                <h3 class="project-title">Economic Empowerment Program</h3>
+                                <p class="project-period"><strong>Project Period:</strong> March 2024 - March 2026</p>
+                                <p class="project-description">Vocational training and microfinance support for women with disabilities to enhance economic participation.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Bagmati, Madhesh</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/plan_nepal.jpg" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
 
-                    <article class="project-card" data-sector="education" data-status="ongoing">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Ongoing</span>
-                            <span class="project-sector">Education</span>
-                            <h3 class="project-title">Inclusive Education Initiative</h3>
-                            <p class="project-description">Working with schools to ensure accessibility and inclusion of girls with disabilities in education.</p>
-                            <div class="project-meta">
-                                <span class="project-location">Central Region</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="education" data-status="ongoing" data-year="2025" data-partner="hi">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/Strategic-Grant2.jpeg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">Education</span>
+                                </div>
+                                <h3 class="project-title">Inclusive Education Initiative</h3>
+                                <p class="project-period"><strong>Project Period:</strong> June 2024 - June 2026</p>
+                                <p class="project-description">Working with schools to ensure accessibility and inclusion of girls with disabilities in education.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Central Region</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/handicap-international.gif" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
 
-                    <article class="project-card" data-sector="gbv" data-status="ongoing">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Ongoing</span>
-                            <span class="project-sector">GBV Prevention</span>
-                            <h3 class="project-title">Gender-Based Violence Prevention Program</h3>
-                            <p class="project-description">Community mobilization and survivor support for preventing and responding to GBV.</p>
-                            <div class="project-meta">
-                                <span class="project-location">All Provinces</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="gbv" data-status="ongoing" data-year="2025" data-partner="cbm">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/07/Icchakama-2-days-training-768x576.jpeg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">GBV Prevention</span>
+                                </div>
+                                <h3 class="project-title">Gender-Based Violence Prevention Program</h3>
+                                <p class="project-period"><strong>Project Period:</strong> January 2023 - December 2025</p>
+                                <p class="project-description">Community mobilization and survivor support for preventing and responding to GBV.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>All Provinces</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/cbm_logo.gif" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
 
-                    <article class="project-card" data-sector="health" data-status="completed">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Completed</span>
-                            <span class="project-sector">Health</span>
-                            <h3 class="project-title">Healthcare Accessibility Project</h3>
-                            <p class="project-description">Improved access to quality healthcare services for women and girls with disabilities.</p>
-                            <div class="project-meta">
-                                <span class="project-location">Bagmati Region</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="health" data-status="completed" data-year="2023" data-partner="fairmed">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/07/Jkr-2-768x424.jpg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Completed</span>
+                                    <span class="project-sector">Health</span>
+                                </div>
+                                <h3 class="project-title">Healthcare Accessibility Project</h3>
+                                <p class="project-period"><strong>Project Period:</strong> January 2022 - December 2023</p>
+                                <p class="project-description">Improved access to quality healthcare services for women and girls with disabilities.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Bagmati Region</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/fairmed.gif" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
 
-                    <article class="project-card" data-sector="advocacy" data-status="completed">
-                        <img src="https://picsum.photos/640/360" alt="Project" class="project-image">
-                        <div class="project-content">
-                            <span class="project-status">Completed</span>
-                            <span class="project-sector">Advocacy</span>
-                            <h3 class="project-title">Policy Advocacy for Inclusive Laws</h3>
-                            <p class="project-description">Advocacy efforts resulting in passage of laws protecting rights of women with disabilities.</p>
-                            <div class="project-meta">
-                                <span class="project-location">National Level</span>
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="advocacy" data-status="completed" data-year="2022" data-partner="mowcsw">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/09/Manohar-scaled-e1757304102267-768x452.jpeg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Completed</span>
+                                    <span class="project-sector">Advocacy</span>
+                                </div>
+                                <h3 class="project-title">Policy Advocacy for Inclusive Laws</h3>
+                                <p class="project-period"><strong>Project Period:</strong> January 2021 - December 2022</p>
+                                <p class="project-description">Advocacy efforts resulting in passage of laws protecting rights of women with disabilities.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>National Level</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/mowcsw.jpg" alt="Partner Logo" class="partner-logo">
+                                </div>
                             </div>
-                            <a href="project-single.html" class="read-more-link">View Details →</a>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
+
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="education" data-status="ongoing" data-year="2024" data-partner="dpod">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/A2J-e1756287310374-768x486.jpg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">Education</span>
+                                </div>
+                                <h3 class="project-title">Skills Development Training Program</h3>
+                                <p class="project-period"><strong>Project Period:</strong> April 2024 - April 2027</p>
+                                <p class="project-description">Comprehensive skills training program for women with disabilities to enhance employment opportunities.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Bagmati, Gandaki</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/DPOD-300x102.jpg" alt="Partner Logo" class="partner-logo">
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="project-single.html" class="project-card-link">
+                        <article class="project-card" data-sector="health" data-status="ongoing" data-year="2025" data-partner="unicef">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/YP-1-e1755252759488.jpeg" alt="Project" class="project-image">
+                            <div class="project-content">
+                                <div class="project-tags">
+                                    <span class="project-status">Ongoing</span>
+                                    <span class="project-sector">Health</span>
+                                </div>
+                                <h3 class="project-title">Reproductive Health Awareness Program</h3>
+                                <p class="project-period"><strong>Project Period:</strong> July 2024 - July 2026</p>
+                                <p class="project-description">Raising awareness about reproductive health rights and services for women with disabilities.</p>
+                                <div class="project-separator"></div>
+                                <div class="project-footer">
+                                    <span class="project-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>All Provinces</span>
+                                    </span>
+                                    <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/UNICEF.png" alt="Partner Logo" class="partner-logo">
+                                </div>
+                            </div>
+                        </article>
+                    </a>
                 </div>
 
                 <!-- Pagination -->
@@ -215,28 +336,6 @@
                     <button class="pagination-btn next">Next →</button>
                 </div>
             </div>
-
-            <!-- Sidebar -->
-            <aside class="archive-sidebar">
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Focus Sectors</h3>
-                    <ul class="category-list">
-                        <li><a href="#" data-sector="advocacy">Advocacy</a></li>
-                        <li><a href="#" data-sector="economic">Economic Empowerment</a></li>
-                        <li><a href="#" data-sector="education">Education</a></li>
-                        <li><a href="#" data-sector="gbv">GBV Prevention</a></li>
-                        <li><a href="#" data-sector="health">Health</a></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Project Status</h3>
-                    <ul class="category-list">
-                        <li><a href="#" data-status="ongoing">Ongoing Projects</a></li>
-                        <li><a href="#" data-status="completed">Completed Projects</a></li>
-                    </ul>
-                </div>
-            </aside>
         </div>
     </main>
 
