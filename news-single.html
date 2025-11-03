@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
@@ -24,8 +26,17 @@
                 </a>
             </div>
 
-            <nav class="nav-menu" id="navMenu">
-                <ul class="menu-items">
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <!-- Mobile Menu Header -->
+                <div class="mobile-menu-header">
+                    <h2 class="mobile-menu-title">Explore NDWA</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Content -->
+                <div class="mobile-menu-content">
+                    <ul class="menu-items">
                     <li class="menu-item">
                         <a href="index.html">Home</a>
                     </li>
@@ -35,7 +46,9 @@
                             <li><a href="about.html">Who We Are</a></li>
                             <li><a href="about.html">Vision, Mission & Objectives</a></li>
                             <li><a href="about.html">Organization & Management</a></li>
-                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                            <li><a href="executive-board.html">Executive Board</a></li>
+                            <li><a href="staffs.html">Staffs</a></li>
+                            <li><a href="organization-timeline.html">Organization Timeline</a></li>
                         </ul>
                     </li>
                     <li class="menu-item dropdown">
@@ -47,11 +60,10 @@
                         </ul>
                     </li>
                     <li class="menu-item dropdown">
-                        <a href="#" class="dropdown-toggle">Community</a>
+                        <a href="photo-gallery.html" class="dropdown-toggle">Gallery</a>
                         <ul class="submenu">
-                            <li><a href="#">Affiliations</a></li>
-                            <li><a href="#">Strategic Partners</a></li>
-                            <li><a href="#">General Partners</a></li>
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -64,6 +76,7 @@
                         <a href="contact.html">Contact</a>
                     </li>
                 </ul>
+                </div>
             </nav>
 
             <div class="header-right">
@@ -71,7 +84,7 @@
                     <option value="en">English</option>
                     <option value="ne">नेपाली</option>
                 </select>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -81,7 +94,7 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main">
+    <main id="main" role="main" tabindex="-1">
         <!-- Single Article Hero -->
         <section class="single-hero" style="background-image: url('https://www.ndwa.org.np/wp-content/uploads/2025/08/A2J-e1756287310374-768x486.jpg')">
             <div class="hero-overlay"></div>
@@ -297,6 +310,9 @@
                             <h4>Report Gender-Based Violence</h4>
                             <p>24/7 confidential support</p>
                             <a href="tel:9801571225" class="gbv-phone">9801571225 (Toll Free)</a>
+                            <a href="gbv-report.html" class="btn btn-primary gbv-report-btn">
+                                <i class="fas fa-exclamation-triangle"></i> Report Incident
+                            </a>
                         </div>
                     </div>
                 </aside>

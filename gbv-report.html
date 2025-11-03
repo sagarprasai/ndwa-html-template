@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Gender-Based Violence - NDWA</title>
+    <link rel="icon" type="image/png" href="images/ndwa.png">
+    <link rel="shortcut icon" type="image/png" href="images/ndwa.png">
+    <link rel="apple-touch-icon" href="images/ndwa.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="https://www.ndwa.org.np/wp-content/themes/kuorinka/images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <!-- Mobile Menu Header -->
+                <div class="mobile-menu-header">
+                    <h2 class="mobile-menu-title">Explore NDWA</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Content -->
+                <div class="mobile-menu-content">
+                    <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="executive-board.html">Executive Board</a></li>
+                            <li><a href="staffs.html">Staffs</a></li>
+                            <li><a href="organization-timeline.html">Organization Timeline</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="photo-gallery.html" class="dropdown-toggle">Gallery</a>
+                        <ul class="submenu">
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="video-gallery.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" role="main" tabindex="-1">
+        <!-- GBV Hero Section -->
+        <section class="gbv-hero">
+            <div class="gbv-hero-overlay"></div>
+            <div class="gbv-hero-content">
+                <div class="gbv-hero-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="gbv-hero-title">Report Gender-Based Violence</h1>
+                <p class="gbv-hero-subtitle">You are not alone. We are here to help. Report safely and confidentially.</p>
+                <div class="gbv-hero-hotline">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:9801571225" class="gbv-hotline-number">9801571225</a>
+                    <span class="gbv-hotline-label">24/7 Toll-Free Helpline</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Report GBV</span>
+            </div>
+        </div>
+
+        <!-- GBV Content -->
+        <div class="container">
+            <div class="gbv-page-wrapper">
+                <!-- Main Content Area -->
+                <div class="gbv-main-content">
+                    <!-- Important Notice -->
+                    <div class="gbv-notice">
+                        <div class="gbv-notice-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="gbv-notice-content">
+                            <h3>Important Information</h3>
+                            <p>Your safety is our priority. All reports are handled with strict confidentiality. You can choose to remain anonymous or provide your contact information for follow-up support.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reporting Form -->
+                    <div class="gbv-form-section">
+                        <h2 class="gbv-form-title">Report an Incident</h2>
+                        <p class="gbv-form-intro">Please fill out the form below. Fields marked with * are required.</p>
+                        
+                        <form class="gbv-report-form" id="gbvReportForm">
+                            <div class="form-group">
+                                <label for="fullName">
+                                    पुरा नाम (Full Name)
+                                </label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Sita / सीता">
+                                <span class="form-hint">नाम बताउन मन छैन भने खाली छोड्नुभए पनि हुन्छ ।</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="streetAddress">
+                                    ठेगाना (Street Address)
+                                </label>
+                                <input type="text" id="streetAddress" name="streetAddress" placeholder="राम शाहपथ">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="municipality">
+                                        स्थानीय निकाय (पालिका)
+                                    </label>
+                                    <input type="text" id="municipality" name="municipality" placeholder="जस्तैः बेलाबारी">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="province">
+                                        प्रदेश
+                                    </label>
+                                    <select id="province" name="province">
+                                        <option value="">Select Province</option>
+                                        <option value="province1">प्रदेश नं. १ (Province 1)</option>
+                                        <option value="madhesh">मधेश प्रदेश (Madhesh Province)</option>
+                                        <option value="bagmati">बागमती प्रदेश (Bagmati Province)</option>
+                                        <option value="gandaki">गण्डकी प्रदेश (Gandaki Province)</option>
+                                        <option value="lumbini">लुम्बिनी प्रदेश (Lumbini Province)</option>
+                                        <option value="karnali">कर्णाली प्रदेश (Karnali Province)</option>
+                                        <option value="sudurpashchim">सुदूरपश्चिम प्रदेश (Sudurpashchim Province)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactNumber">
+                                    सम्पर्क नम्बर * <span class="required-asterisk">*</span>
+                                </label>
+                                <div class="phone-input-group">
+                                    <select id="countryCode" name="countryCode" class="country-code">
+                                        <option value="+977">Nepal +977</option>
+                                    </select>
+                                    <input type="tel" id="contactNumber" name="contactNumber" required placeholder="जस्तैः ९८१२३४५६७८">
+                                </div>
+                                <span class="form-hint">हामी तपाईँलाई यो नम्बरमा सम्पर्क गर्ने छौँ ।</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="detailedDescription">
+                                    विस्तृत विवरण * <span class="required-asterisk">*</span>
+                                </label>
+                                <textarea id="detailedDescription" name="detailedDescription" rows="8" required maxlength="180" placeholder="कृपया कुनै घटना वा विषयको जानकारी गराउन खोज्नुभएको हो भने, हामीलाई सकभर सम्पूर्ण जानकारीहरू लेखेर पठाउनु भयो भने हामीलाई त्यस विषयमा प्रकृया चाल्न सहज र छिटो हुन्छ ।"></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span> / 180
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <span class="checkbox-text">
+                                        Consent * <span class="required-asterisk">*</span><br>
+                                        <span class="consent-full-text">मैले यस फारम मार्फत नेपाल अपाङ्ग महिला सङ्घलाई सम्पर्क गरिसकेपछि, त्यस संस्थालाई मैले प्रदान गरेको जानकारीलाई हेर्ने, अध्ययन गर्ने, विश्लेषण गर्ने, थप जानकारीको लागि मलाई सम्पर्क गर्ने र आप्तकालीन अवस्था भए सम्बन्धि निकायलाइ खबर गर्ने अनुमति प्रदान गर्दछु ।</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="gbv-sidebar">
+                    <!-- Emergency Hotline -->
+                    <div class="gbv-sidebar-card emergency-card">
+                        <div class="gbv-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>24/7 Emergency Hotline</h3>
+                        <p class="hotline-number">
+                            <a href="tel:9801571225">9801571225</a>
+                        </p>
+                        <p class="hotline-label">Toll-Free • Confidential</p>
+                    </div>
+
+                    <!-- GBV Facts -->
+                    <div class="gbv-sidebar-card facts-card">
+                        <h3>GBV Facts in Nepal</h3>
+                        <ul class="gbv-facts-list">
+                            <li>
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>1 in 3 women in Nepal experience gender-based violence</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-users"></i>
+                                <span>Women with disabilities face 2-3 times higher risk of violence</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line"></i>
+                                <span>Only 15% of GBV cases are reported to authorities</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Early reporting can help prevent further violence and connect you with support services</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support Services -->
+                    <div class="gbv-sidebar-card support-card">
+                        <h3>Support Services</h3>
+                        <div class="support-services">
+                            <div class="support-service">
+                                <i class="fas fa-user-md"></i>
+                                <div>
+                                    <h4>Medical Support</h4>
+                                    <p>Emergency medical care and documentation</p>
+                                </div>
+                            </div>
+                            <div class="support-service">
+                                <i class="fas fa-gavel"></i>
+                                <div>
+                                    <h4>Legal Assistance</h4>
+                                    <p>Legal counseling and court support</p>
+                                </div>
+                            </div>
+                            <div class="support-service">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4>Counseling</h4>
+                                    <p>Psychosocial support and therapy</p>
+                                </div>
+                            </div>
+                            <div class="support-service">
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <h4>Safe Shelter</h4>
+                                    <p>Temporary safe accommodation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What Happens Next -->
+                    <div class="gbv-sidebar-card next-steps-card">
+                        <h3>What Happens Next?</h3>
+                        <ol class="next-steps-list">
+                            <li>
+                                <span class="step-number">1</span>
+                                <span class="step-text">We receive your report confidentially</span>
+                            </li>
+                            <li>
+                                <span class="step-number">2</span>
+                                <span class="step-text">A trained counselor will contact you (if contact provided)</span>
+                            </li>
+                            <li>
+                                <span class="step-number">3</span>
+                                <span class="step-text">We assess your needs and connect you with appropriate services</span>
+                            </li>
+                            <li>
+                                <span class="step-number">4</span>
+                                <span class="step-text">We provide ongoing support throughout the process</span>
+                            </li>
+                        </ol>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://www.ndwa.org.np/wp-content/themes/kuorinka/images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+                        <p><i class="fas fa-phone"></i> Helpline: <a href="tel:9801571225">9801571225 (Toll Free)</a></p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Character counter for description textarea
+        document.addEventListener('DOMContentLoaded', () => {
+            const descriptionTextarea = document.getElementById('detailedDescription');
+            const charCountSpan = document.getElementById('charCount');
+            
+            if (descriptionTextarea && charCountSpan) {
+                descriptionTextarea.addEventListener('input', () => {
+                    charCountSpan.textContent = descriptionTextarea.value.length;
+                });
+            }
+
+            // Form submission
+            const gbvForm = document.getElementById('gbvReportForm');
+            if (gbvForm) {
+                gbvForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // Here you would normally send the data to a server
+                    alert('Thank you for your report. We will contact you soon. Your safety is our priority.');
+                    gbvForm.reset();
+                    if (charCountSpan) {
+                        charCountSpan.textContent = '0';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

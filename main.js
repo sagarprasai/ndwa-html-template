@@ -10,22 +10,105 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn")
   const navMenu = document.getElementById("navMenu")
+  const mobileMenuClose = document.getElementById("mobileMenuClose")
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("active")
-      mobileMenuBtn.classList.toggle("active")
+  if (!mobileMenuBtn || !navMenu) return
+
+  const closeMenu = (focusButton = false) => {
+    navMenu.classList.remove("active")
+    mobileMenuBtn.classList.remove("active")
+    mobileMenuBtn.setAttribute("aria-expanded", "false")
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = ""
+    navMenu.querySelectorAll(".dropdown.open").forEach((dropdown) => {
+      dropdown.classList.remove("open")
+      const submenu = dropdown.querySelector(".submenu")
+      const toggle = dropdown.querySelector(".dropdown-toggle")
+      if (submenu) {
+        submenu.classList.remove("active")
+      }
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false")
+      }
     })
+    if (window.innerWidth < 1024) {
+      navMenu.setAttribute("aria-hidden", "true")
+    }
+    if (focusButton) {
+      mobileMenuBtn.focus()
+    }
+  }
 
-    // Close menu when clicking on a link
-    const menuItems = navMenu.querySelectorAll("a")
-    menuItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        navMenu.classList.remove("active")
-        mobileMenuBtn.classList.remove("active")
-      })
+  const openMenu = () => {
+    navMenu.classList.add("active")
+    mobileMenuBtn.classList.add("active")
+    mobileMenuBtn.setAttribute("aria-expanded", "true")
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = "hidden"
+    if (window.innerWidth < 1024) {
+      navMenu.setAttribute("aria-hidden", "false")
+    }
+  }
+
+  const toggleMenu = () => {
+    if (navMenu.classList.contains("active")) {
+      closeMenu()
+    } else {
+      openMenu()
+    }
+  }
+
+  const updateMenuStateForViewport = () => {
+    if (window.innerWidth >= 1024) {
+      closeMenu()
+      navMenu.setAttribute("aria-hidden", "false")
+      document.body.style.overflow = ""
+    } else {
+      const isOpen = navMenu.classList.contains("active")
+      navMenu.setAttribute("aria-hidden", isOpen ? "false" : "true")
+      mobileMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false")
+      document.body.style.overflow = isOpen ? "hidden" : ""
+    }
+  }
+
+  mobileMenuBtn.addEventListener("click", (event) => {
+    event.preventDefault()
+    toggleMenu()
+  })
+
+  // Close button event listener
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener("click", (event) => {
+      event.preventDefault()
+      closeMenu(true)
     })
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navMenu.classList.contains("active")) {
+      closeMenu(true)
+    }
+  })
+
+  document.addEventListener("click", (event) => {
+    // Don't close if clicking inside the modal
+    if (navMenu.classList.contains("active") && 
+        !navMenu.contains(event.target) && 
+        !mobileMenuBtn.contains(event.target) &&
+        !mobileMenuClose?.contains(event.target)) {
+      closeMenu()
+    }
+  })
+
+  // Close menu when selecting a navigational link (skip dropdown toggles)
+  const menuLinks = navMenu.querySelectorAll("a:not(.dropdown-toggle)")
+  menuLinks.forEach((item) => {
+    item.addEventListener("click", () => closeMenu())
+  })
+
+  window.addEventListener("resize", updateMenuStateForViewport)
+
+  updateMenuStateForViewport()
 })
 
 // ================================================================
@@ -234,30 +317,104 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 function initializeDropdowns() {
   const dropdowns = document.querySelectorAll(".dropdown")
 
-  dropdowns.forEach((dropdown) => {
+  const closeAllDropdowns = (exception) => {
+    dropdowns.forEach((dropdown) => {
+      if (dropdown === exception) return
+      const toggle = dropdown.querySelector(".dropdown-toggle")
+      const submenu = dropdown.querySelector(".submenu")
+      if (!toggle || !submenu) return
+      dropdown.classList.remove("open")
+      submenu.classList.remove("active")
+      toggle.setAttribute("aria-expanded", "false")
+    })
+  }
+
+  dropdowns.forEach((dropdown, index) => {
     const toggle = dropdown.querySelector(".dropdown-toggle")
     const submenu = dropdown.querySelector(".submenu")
 
     if (!toggle || !submenu) return
 
-    // Desktop hover
+    const submenuId = submenu.id || `nav-submenu-${index}`
+    submenu.id = submenuId
+
+    toggle.setAttribute("aria-haspopup", "true")
+    toggle.setAttribute("aria-expanded", "false")
+    toggle.setAttribute("aria-controls", submenuId)
+
+    const openDropdown = () => {
+      dropdown.classList.add("open")
+      submenu.classList.add("active")
+      toggle.setAttribute("aria-expanded", "true")
+    }
+
+    const closeDropdown = () => {
+      dropdown.classList.remove("open")
+      submenu.classList.remove("active")
+      toggle.setAttribute("aria-expanded", "false")
+    }
+
     dropdown.addEventListener("mouseenter", () => {
-      submenu.style.opacity = "1"
-      submenu.style.visibility = "visible"
-      submenu.style.transform = "translateY(0)"
+      if (window.innerWidth >= 1024) {
+        closeAllDropdowns(dropdown)
+        openDropdown()
+      }
     })
 
     dropdown.addEventListener("mouseleave", () => {
-      submenu.style.opacity = "0"
-      submenu.style.visibility = "hidden"
-      submenu.style.transform = "translateY(-10px)"
+      if (window.innerWidth >= 1024) {
+        closeDropdown()
+      }
     })
 
-    // Mobile click
-    toggle.addEventListener("click", (e) => {
+    toggle.addEventListener("focus", () => {
+      closeAllDropdowns(dropdown)
+      openDropdown()
+    })
+
+    dropdown.addEventListener("focusout", (event) => {
+      if (!dropdown.contains(event.relatedTarget)) {
+        closeDropdown()
+      }
+    })
+
+    toggle.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeDropdown()
+        toggle.focus()
+      }
+
+      if (event.key === "Enter" || event.key === " ") {
+        if (window.innerWidth < 1024) {
+          event.preventDefault()
+          const isOpen = dropdown.classList.contains("open")
+          if (isOpen) {
+            closeDropdown()
+          } else {
+            closeAllDropdowns(dropdown)
+            openDropdown()
+          }
+        }
+      }
+    })
+
+    submenu.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeDropdown()
+        toggle.focus()
+      }
+    })
+
+    toggle.addEventListener("click", (event) => {
       if (window.innerWidth < 1024) {
-        e.preventDefault()
-        submenu.classList.toggle("active")
+        event.preventDefault()
+        const isOpen = dropdown.classList.contains("open")
+        if (isOpen) {
+          closeDropdown()
+        } else {
+          closeAllDropdowns(dropdown)
+          openDropdown()
+        }
       }
     })
   })
@@ -310,24 +467,47 @@ function initializeIntersectionObserver() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fadeIn")
+          // Add animation class with a slight delay for staggered effect
+          const delay = entry.target.dataset.delay || 0
+          setTimeout(() => {
+            entry.target.classList.add("animate-fadeIn")
+          }, parseInt(delay))
           observer.unobserve(entry.target)
         }
       })
     },
     {
       threshold: 0.1,
+      rootMargin: "50px",
     },
   )
 
-  // Observe cards and elements
-  document
-    .querySelectorAll(
-      ".news-card, .campaign-card, .stat-card, .quick-link, .publication-card, .project-card, .archive-card",
-    )
-    .forEach((el) => {
+  // Helper to check if element is in or near viewport
+  function isNearViewport(element) {
+    const rect = element.getBoundingClientRect()
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight
+    // Element is in viewport or within 200px of viewport
+    return rect.top < windowHeight + 200 && rect.bottom > -200
+  }
+
+  // Observe cards and elements with staggered delays
+  const cards = document.querySelectorAll(
+    ".news-card, .campaign-card, .stat-card, .quick-link, .publication-card, .project-card, .archive-card",
+  )
+  
+  cards.forEach((el, index) => {
+    // If element is already in or near viewport, animate immediately (no delay)
+    if (isNearViewport(el)) {
+      setTimeout(() => {
+        el.classList.add("animate-fadeIn")
+      }, Math.min(index * 30, 150)) // Shorter delay for visible elements
+    } else {
+      // Mark for animation and add staggered delay for below-fold elements
+      el.setAttribute("data-animate", "true")
+      el.dataset.delay = Math.min(index * 50, 300)
       observer.observe(el)
-    })
+    }
+  })
 }
 
 document.addEventListener("DOMContentLoaded", initializeIntersectionObserver)
@@ -352,22 +532,39 @@ function initializeScrollToTop() {
         border: none;
         border-radius: 50%;
         cursor: pointer;
-        display: none;
+        opacity: 0;
+        visibility: hidden;
         font-size: 1.5rem;
         z-index: 99;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: scale(0.8);
+        will-change: transform, opacity;
     `
 
   document.body.appendChild(scrollBtn)
 
-  window.addEventListener("scroll", () => {
+  let ticking = false
+
+  function updateScrollButton() {
     if (window.pageYOffset > 300) {
-      scrollBtn.style.display = "block"
+      scrollBtn.style.opacity = "1"
+      scrollBtn.style.visibility = "visible"
+      scrollBtn.style.transform = "scale(1)"
     } else {
-      scrollBtn.style.display = "none"
+      scrollBtn.style.opacity = "0"
+      scrollBtn.style.visibility = "hidden"
+      scrollBtn.style.transform = "scale(0.8)"
     }
-  })
+    ticking = false
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollButton)
+      ticking = true
+    }
+  }, { passive: true })
 
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({

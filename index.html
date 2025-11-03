@@ -27,8 +27,17 @@
                 </a>
             </div>
 
-            <nav class="nav-menu" id="navMenu">
-                <ul class="menu-items">
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <!-- Mobile Menu Header -->
+                <div class="mobile-menu-header">
+                    <h2 class="mobile-menu-title">Explore NDWA</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Content -->
+                <div class="mobile-menu-content">
+                    <ul class="menu-items">
                     <li class="menu-item">
                         <a href="index.html">Home</a>
                     </li>
@@ -38,7 +47,9 @@
                             <li><a href="about.html">Who We Are</a></li>
                             <li><a href="about.html">Vision, Mission & Objectives</a></li>
                             <li><a href="about.html">Organization & Management</a></li>
-                            <li><a href="about.html">Executive Board & Staffs</a></li>
+                            <li><a href="executive-board.html">Executive Board</a></li>
+                            <li><a href="staffs.html">Staffs</a></li>
+                            <li><a href="organization-timeline.html">Organization Timeline</a></li>
                         </ul>
                     </li>
                     <li class="menu-item dropdown">
@@ -50,11 +61,10 @@
                         </ul>
                     </li>
                     <li class="menu-item dropdown">
-                        <a href="#" class="dropdown-toggle">Community</a>
+                        <a href="photo-gallery.html" class="dropdown-toggle">Gallery</a>
                         <ul class="submenu">
-                            <li><a href="#">Affiliations</a></li>
-                            <li><a href="#">Strategic Partners</a></li>
-                            <li><a href="#">General Partners</a></li>
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="video-gallery.html">Video Gallery</a></li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -67,6 +77,7 @@
                         <a href="contact.html">Contact</a>
                     </li>
                 </ul>
+                </div>
             </nav>
 
             <div class="header-right">
@@ -74,7 +85,7 @@
                     <option value="en">English</option>
                     <option value="ne">नेपाली</option>
                 </select>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -84,7 +95,7 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main" role="main">
+    <main id="main" role="main" tabindex="-1">
         <!-- Hero Section -->
         <section class="hero" style="background-image: url('https://scontent.fktm1-1.fna.fbcdn.net/v/t39.30808-6/503411890_3931563160428040_3254289124736895541_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=4tceW9azLwkQ7kNvwFYDvQL&_nc_oc=AdmgfydbITI9AVcBUHRNsODfytZtVbgnxk38pXkGnDylbNVm1U_c-fShE9JTkbBUxnjG-awWBqzp7WI3bUAFsBVk&_nc_zt=23&_nc_ht=scontent.fktm1-1.fna&_nc_gid=8Y_BFgbaf4sY1O9nEotu7g&oh=00_Afg3TJop0iNY2-SNGNNlb34fwfvjlBy9ntyL5A0Tp9oofw&oe=690CF32D')">
             <div class="hero-overlay"></div>
@@ -111,48 +122,61 @@
                 <h2 class="section-title">Explore NDWA</h2>
                 <p class="section-subtitle">Discover our work, join our community, and learn how you can make a difference</p>
                 
-                <div class="quick-links-grid">
-                    <a href="about.html" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-info-circle"></i>
+                <div class="quick-links-container">
+                    <div class="quick-links-left">
+                        <div class="quick-links-grid">
+                            <a href="about.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <h3>About Us</h3>
+                                <p>Learn about NDWA</p>
+                            </a>
+                            <a href="projects.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <h3>Our Work</h3>
+                                <p>Programs & initiatives</p>
+                            </a>
+                            <a href="photo-gallery.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-images"></i>
+                                </div>
+                                <h3>Gallery</h3>
+                                <p>Photos & videos</p>
+                            </a>
+                            <a href="publications.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3>Publications</h3>
+                                <p>Reports & resources</p>
+                            </a>
+                            <a href="news-events.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <h3>News & Events</h3>
+                                <p>Stay updated</p>
+                            </a>
+                            <a href="contact.html" class="quick-link">
+                                <div class="quick-link-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h3>Contact</h3>
+                                <p>Reach out to us</p>
+                            </a>
                         </div>
-                        <h3>About Us</h3>
-                        <p>Learn about NDWA</p>
-                    </a>
-                    <a href="projects.html" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-briefcase"></i>
+                    </div>
+                    
+                    <a href="#" class="chairperson-message">
+                        <h3 class="chairperson-title">Message from the Chairperson</h3>
+                        <div class="chairperson-image-container">
+                            <img src="https://media.licdn.com/dms/image/v2/C5603AQH5Q8f0xcr85w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516556857249?e=2147483647&v=beta&t=w4_zkqSDMSAlMoPVIBj3t7WoIgLbCIE7mvRmZBTIbtg" alt="Meena Paudel" class="chairperson-image">
                         </div>
-                        <h3>Our Work</h3>
-                        <p>Programs & initiatives</p>
-                    </a>
-                    <a href="#" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Community</h3>
-                        <p>Partners & members</p>
-                    </a>
-                    <a href="publications.html" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3>Publications</h3>
-                        <p>Reports & resources</p>
-                    </a>
-                    <a href="news-events.html" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <h3>News & Events</h3>
-                        <p>Stay updated</p>
-                    </a>
-                    <a href="contact.html" class="quick-link">
-                        <div class="quick-link-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Contact</h3>
-                        <p>Reach out to us</p>
+                        <h4 class="chairperson-name">Meena Paudel</h4>
+                        <p class="chairperson-role">Chairperson</p>
                     </a>
                 </div>
             </div>
@@ -245,83 +269,6 @@
                         </article>
                     </a>
 
-                    <a href="https://www.ndwa.org.np/news/ndwa-empowers-opds-in-chitwan-through-financial-literacy-training/" class="project-card-link">
-                        <article class="project-card" data-category="workshop" data-year="2025">
-                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/07/Icchakama-2-days-training-768x576.jpeg" alt="NDWA Empowers OPDs in Chitwan through Financial Literacy Training" class="project-image">
-                            <div class="project-content">
-                                <div class="project-tags">
-                                    <span class="project-sector">Workshop</span>
-                                </div>
-                                <h3 class="project-title">NDWA Empowers OPDs in Chitwan through Financial Literacy Training</h3>
-                                <p class="project-description">The image shows a group of people posing for a group photo indoors, after the event. They are standing and sitting in two rows in front of a green wall with certificates and a banner in the background.</p>
-                                <div class="project-separator"></div>
-                                <div class="project-footer">
-                                    <div class="news-meta-info">
-                                        <span class="news-date-item">
-                                            <i class="far fa-calendar"></i>
-                                            <span>Mon, July 28, 2025</span>
-                                        </span>
-                                        <span class="news-read-time-item">
-                                            <i class="far fa-clock"></i>
-                                            <span>2 min read</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-
-                    <a href="https://www.ndwa.org.np/uncategorized/focusing-marginalized-communities-and-people-with-disabilities-in-budget-planning/" class="project-card-link">
-                        <article class="project-card" data-category="news" data-year="2025">
-                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/07/Jkr-2-768x424.jpg" alt="Focusing marginalized communities and people with disabilities in budget planning" class="project-image">
-                            <div class="project-content">
-                                <div class="project-tags">
-                                    <span class="project-sector">News</span>
-                                </div>
-                                <h3 class="project-title">Focusing marginalized communities and people with disabilities in budget planning</h3>
-                                <p class="project-description">This is a group photo featuring a diverse mix of men and women, some of whom are persons with disabilities. They are gathered indoors, standing and seated together, smiling at the camera.</p>
-                                <div class="project-separator"></div>
-                                <div class="project-footer">
-                                    <div class="news-meta-info">
-                                        <span class="news-date-item">
-                                            <i class="far fa-calendar"></i>
-                                            <span>Fri, July 18, 2025</span>
-                                        </span>
-                                        <span class="news-read-time-item">
-                                            <i class="far fa-clock"></i>
-                                            <span>5 min read</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-
-                    <a href="https://www.ndwa.org.np/news/ndwa-completes-first-phase-of-school-awareness-program-on-disability-and-gbv-in-kathmandu-valley/" class="project-card-link">
-                        <article class="project-card" data-category="event" data-year="2025">
-                            <img src="https://www.ndwa.org.np/wp-content/uploads/2025/09/Manohar-scaled-e1757304102267-768x452.jpeg" alt="NDWA Completes First Phase of School Awareness Program" class="project-image">
-                            <div class="project-content">
-                                <div class="project-tags">
-                                    <span class="project-sector">Event</span>
-                                </div>
-                                <h3 class="project-title">NDWA Completes First Phase of School Awareness Program on Disability and Gender Based Violence in Kathmandu Valley</h3>
-                                <p class="project-description">Kathmandu, September 5, 2025 — The Nepal Disabled Women Association (NDWA) has successfully concluded the first phase of its school-level awareness sessions on disability and gender-based violence (GBV) in Budhanilkantha, Tarkeshwar, and Tokha municipalities.</p>
-                                <div class="project-separator"></div>
-                                <div class="project-footer">
-                                    <div class="news-meta-info">
-                                        <span class="news-date-item">
-                                            <i class="far fa-calendar"></i>
-                                            <span>Mon, September 8, 2025</span>
-                                        </span>
-                                        <span class="news-read-time-item">
-                                            <i class="far fa-clock"></i>
-                                            <span>3 min read</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
                 </div>
             </div>
         </section>
@@ -391,6 +338,58 @@
                             <div class="stat-card-value">300+</div>
                             <div class="stat-card-label">Training Sessions</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Partners Section -->
+        <section class="partners-section" aria-labelledby="partners-heading">
+            <div class="container">
+                <h2 class="section-title partners-title" id="partners-heading">Our Partners</h2>
+                
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/mowcsw.jpg" alt="Ministry of Women Children and Social Welfare (MoWCSW)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/DPOD-300x102.jpg" alt="Disabled Peoples' Organization of Denmark (DPOD)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/ffo.png" alt="Norwegian Federation of the Organizations of Disabled People (FFO)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/handicap-international.gif" alt="Handicap International (HI)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/DRPILogo.png" alt="Disability Rights Promotion International (DRPI)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/plan_nepal.jpg" alt="Plan Nepal">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/nlr.jpg" alt="Netherland Leprosy Relief – Nepal (NLR)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/ifes.gif-300x294.jpg" alt="International Foundation for Electoral Systems (IFES)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/UNICEF.png" alt="United Nations Children's Fund (UNICEF)">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/ausaid-300x134.jpg" alt="Australian Embassy / Australian Aid">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/Myright-Logo.jpg" alt="My Rights">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/fairmed.gif" alt="FAIR MED">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/cbm_logo.gif" alt="CBM">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://www.nfdn.org.np/wp-content/uploads/2018/11/atlas_logo_en.png" alt="Atlas Alliance">
                     </div>
                 </div>
             </div>
@@ -534,7 +533,7 @@
                             <h4><i class="fas fa-envelope"></i> Email</h4>
                             <a href="mailto:info@ndwa.org.np" class="contact-email">info@ndwa.org.np</a>
                         </div>
-                        <a href="/gbv-report" class="btn btn-bw" style="width: 100%;">
+                        <a href="gbv-report.html" class="btn btn-bw" style="width: 100%;">
                             <i class="fas fa-plus-circle"></i>
                             Report Now
                         </a>
