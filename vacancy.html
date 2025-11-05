@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancy - NDWA</title>
+    <link rel="icon" type="image/png" href="images/ndwa.png">
+    <link rel="shortcut icon" type="image/png" href="images/ndwa.png">
+    <link rel="apple-touch-icon" href="images/ndwa.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Job Card Styles */
+        .job-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+            flex: 1;
+        }
+
+        .job-excerpt {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .job-deadline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        .job-deadline i {
+            color: var(--primary);
+        }
+
+        .job-deadline-date {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .job-apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .job-apply-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(225, 31, 38, 0.3);
+        }
+
+        .job-apply-btn i {
+            font-size: 0.9rem;
+        }
+
+        .vacancy-content {
+            flex: 1;
+        }
+
+        /* Empty State Design */
+        .no-vacancy-empty-state {
+            background-color: white;
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .no-vacancy-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .no-vacancy-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .no-vacancy-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .no-vacancy-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .no-vacancy-actions .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .no-vacancy-actions .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 1023px) {
+            .job-header {
+                flex-direction: column;
+            }
+
+            .no-vacancy-empty-state {
+                padding: 2rem 1.5rem;
+            }
+
+            .no-vacancy-icon {
+                font-size: 3rem;
+            }
+
+            .no-vacancy-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <!-- Mobile Menu Header -->
+                <div class="mobile-menu-header">
+                    <h2 class="mobile-menu-title">Explore NDWA</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Content -->
+                <div class="mobile-menu-content">
+                    <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="executive-board.html">Executive Board</a></li>
+                            <li><a href="staffs.html">Staffs</a></li>
+                            <li><a href="organization-timeline.html">Organization Timeline</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                            <li><a href="success-story.html">Success Story</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="photo-gallery.html" class="dropdown-toggle">Gallery</a>
+                        <ul class="submenu">
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="video-gallery.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="vacancy.html">Vacancy</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+
+            <div class="header-right">
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" role="main" tabindex="-1">
+        <!-- Archive Hero -->
+        <section class="archive-hero">
+            <h1>Vacancy</h1>
+            <p>Join our team and make a difference in the lives of women with disabilities</p>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Vacancy</span>
+            </div>
+        </div>
+
+        <!-- Vacancy Content -->
+        <div class="container inner-page-container">
+            <div class="inner-page-content">
+                <div class="vacancy-content">
+                    <!-- Empty State (Show when no vacancies available) -->
+                    <!-- This will be conditionally displayed based on vacancy availability -->
+                    <!-- To hide this, add style="display: none;" when vacancies are available -->
+                    <div class="no-vacancy-empty-state">
+                        <div class="no-vacancy-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h2 class="no-vacancy-title">No Open Vacancies at the Moment</h2>
+                        <p class="no-vacancy-description">
+                            We don't have any open positions right now, but we're always looking for passionate individuals to join our mission. Check back soon or subscribe to our newsletter to be notified when new opportunities become available.
+                        </p>
+                        <div class="no-vacancy-actions">
+                            <a href="contact.html" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Contact Us
+                            </a>
+                            <a href="news-events.html" class="btn btn-secondary">
+                                <i class="fas fa-bell"></i> Stay Updated
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Job Cards -->
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Program Officer - Gender-Based Violence Prevention</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            NDWA is seeking a dedicated Program Officer to lead our Gender-Based Violence Prevention initiatives. The successful candidate will work closely with communities, partner organizations, and government agencies to implement prevention programs and support survivors.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">January 15, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Advocacy Coordinator</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            We are looking for an experienced Advocacy Coordinator to strengthen our policy advocacy efforts. The role involves developing advocacy strategies, engaging with stakeholders, and organizing campaigns to advance the rights of women with disabilities.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">January 20, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Finance and Administration Officer</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            NDWA seeks a Finance and Administration Officer to manage financial operations, budgeting, and administrative functions. The ideal candidate will have experience in NGO financial management and strong organizational skills.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">January 25, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Field Coordinator - Bagmati Province</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            Join our team as a Field Coordinator to implement programs and build partnerships in Bagmati Province. This role involves community engagement, training delivery, and coordination with local stakeholders.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">February 1, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Research and Documentation Officer</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            We are seeking a Research and Documentation Officer to conduct research, prepare reports, and document NDWA's work. The candidate should have strong research skills and experience in qualitative and quantitative research methods.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">February 5, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-header">
+                            <h2 class="job-title">Communications Officer</h2>
+                        </div>
+                        <p class="job-excerpt">
+                            NDWA is looking for a Communications Officer to manage our communications, social media, and public relations. The role involves creating content, managing media relations, and enhancing our visibility.
+                        </p>
+                        <div class="job-meta">
+                            <div class="job-deadline">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Apply By:</span>
+                                <span class="job-deadline-date">February 10, 2025</span>
+                            </div>
+                        </div>
+                        <a href="vacancy-single.html" class="job-apply-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Proceed to Apply
+                        </a>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn prev">← Previous</button>
+                        <div class="pagination-numbers">
+                            <button class="pagination-number active" data-page="1">1</button>
+                            <button class="pagination-number" data-page="2">2</button>
+                        </div>
+                        <button class="pagination-btn next">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="page-sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Latest News</h3>
+                        <div class="related-posts">
+                            <a href="https://www.ndwa.org.np/news/local-support-programs-for-women-with-disabilities-sharing-challenges-and-building-mutual-support/" class="related-post">
+                                <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/A2J-e1756287310374-768x486.jpg" alt="News" class="related-thumbnail">
+                                <div>
+                                    <h4>Support Programs for Women with Disabilities: Sharing Challenges and Building Mutual Support</h4>
+                                    <p class="related-date"><i class="far fa-calendar"></i> Wed, August 27, 2025</p>
+                                </div>
+                            </a>
+                            <a href="https://www.ndwa.org.np/news/validation-workshop-on-mapping-of-opds-shgs-and-cooperatives-in-chitwan/" class="related-post">
+                                <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/YP-1-e1755252759488.jpeg" alt="News" class="related-thumbnail">
+                                <div>
+                                    <h4>Validation Workshop on Mapping of OPDs, SHGs and Cooperatives in Chitwan</h4>
+                                    <p class="related-date"><i class="far fa-calendar"></i> Fri, August 15, 2025</p>
+                                </div>
+                            </a>
+                            <a href="https://www.ndwa.org.np/news/ndwa-hosts-two-day-mental-health-and-self-care-workshop-for-women-with-disabilities/" class="related-post">
+                                <img src="https://www.ndwa.org.np/wp-content/uploads/2025/08/Strategic-Grant2.jpeg" alt="News" class="related-thumbnail">
+                                <div>
+                                    <h4>NDWA Hosts Two-Day Mental Health and Self-Care Workshop for Women with Disabilities</h4>
+                                    <p class="related-date"><i class="far fa-calendar"></i> Mon, August 11, 2025</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Quick Links</h3>
+                        <ul class="category-list">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="projects.html">Our Work</a></li>
+                            <li><a href="publications.html">Publications</a></li>
+                            <li><a href="news-events.html">News & Events</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Get Involved</h3>
+                        <p style="color: var(--text-medium); margin-bottom: 1rem; line-height: 1.6;">
+                            Interested in volunteering or supporting our work? Learn how you can make a difference.
+                        </p>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">
+                            <i class="fas fa-hand-paper"></i> Get Involved
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> PO Box: 1775, House no: 37, Kalopul Marga<br>Kalopul, Kathmandu, Nepal</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+977-1-4535131">01-4535131</a><br><a href="tel:+977-1-4538342">01-4538342</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:ndwa.2009@gmail.com">ndwa.2009@gmail.com</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">GBV Emergency Helpline</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:9801571225">9801571225</a><br><span style="font-size: 0.9em; opacity: 0.9;">24/7 Confidential Support (Toll-Free)</span></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

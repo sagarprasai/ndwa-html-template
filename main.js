@@ -750,7 +750,166 @@ window.addEventListener(
 )
 
 // ================================================================
-// 17. INITIALIZATION
+// 17. SEARCH MODAL FUNCTIONALITY
+// ================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchIconBtn = document.getElementById("searchIconBtn")
+  const searchModal = document.getElementById("searchModal")
+  const searchModalClose = document.getElementById("searchModalClose")
+  const searchModalOverlay = document.getElementById("searchModalOverlay")
+  const searchInput = document.getElementById("searchInput")
+  const searchForm = document.getElementById("searchForm")
+  const popularSearchTags = document.querySelectorAll(".popular-search-tag")
+
+  if (!searchIconBtn || !searchModal) return
+
+  // Store the element that had focus before opening modal
+  let previousActiveElement = null
+
+  const openSearchModal = () => {
+    previousActiveElement = document.activeElement
+    searchModal.classList.add("active")
+    searchModal.setAttribute("aria-hidden", "false")
+    searchIconBtn.setAttribute("aria-expanded", "true")
+    document.body.classList.add("search-modal-open")
+
+    // Focus the search input after a short delay to allow animation
+    setTimeout(() => {
+      searchInput.focus()
+    }, 100)
+  }
+
+  const closeSearchModal = (returnFocus = true) => {
+    searchModal.classList.remove("active")
+    searchModal.setAttribute("aria-hidden", "true")
+    searchIconBtn.setAttribute("aria-expanded", "false")
+    document.body.classList.remove("search-modal-open")
+
+    // Return focus to the element that opened the modal
+    if (returnFocus && previousActiveElement) {
+      previousActiveElement.focus()
+    }
+  }
+
+  // Open modal when search icon is clicked
+  searchIconBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    openSearchModal()
+  })
+
+  // Close modal when close button is clicked
+  if (searchModalClose) {
+    searchModalClose.addEventListener("click", (e) => {
+      e.preventDefault()
+      closeSearchModal(true)
+    })
+  }
+
+  // Close modal when overlay is clicked
+  if (searchModalOverlay) {
+    searchModalOverlay.addEventListener("click", () => {
+      closeSearchModal(true)
+    })
+  }
+
+  // Close modal on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && searchModal.classList.contains("active")) {
+      closeSearchModal(true)
+    }
+  })
+
+  // Handle search form submission
+  if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+      const searchQuery = searchInput.value.trim()
+
+      if (searchQuery) {
+        // If form has action attribute, let it submit naturally
+        // Otherwise, redirect manually
+        if (!searchForm.getAttribute("action")) {
+          e.preventDefault()
+          window.location.href = `search.html?q=${encodeURIComponent(searchQuery)}`
+        }
+        // If form has action, it will submit naturally
+      } else {
+        e.preventDefault()
+      }
+    })
+  }
+
+  // Handle popular search tag clicks
+  popularSearchTags.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      const searchText = tag.querySelector("span").textContent
+      searchInput.value = searchText
+      
+      // Submit the search automatically
+      if (searchForm) {
+        if (searchForm.getAttribute("action")) {
+          // Form has action, submit it
+          searchForm.submit()
+        } else {
+          // Redirect manually
+          window.location.href = `search.html?q=${encodeURIComponent(searchText)}`
+        }
+      }
+    })
+  })
+
+  // Prevent modal from closing when clicking inside the modal content
+  if (searchModal) {
+    const modalContent = searchModal.querySelector(".search-modal-content")
+    if (modalContent) {
+      modalContent.addEventListener("click", (e) => {
+        e.stopPropagation()
+      })
+    }
+  }
+})
+
+// ================================================================
+// 18. SEARCH PAGE FUNCTIONALITY
+// ================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Handle search query parameter on search.html
+  const urlParams = new URLSearchParams(window.location.search)
+  const searchQuery = urlParams.get("q")
+
+  if (searchQuery) {
+    // Update search page input
+    const searchPageInput = document.getElementById("searchPageInput")
+    if (searchPageInput) {
+      searchPageInput.value = decodeURIComponent(searchQuery)
+    }
+
+    // Update hero text
+    const archiveHero = document.querySelector(".archive-hero")
+    if (archiveHero) {
+      const h1 = archiveHero.querySelector("h1")
+      if (h1) {
+        h1.textContent = `Search results for "${decodeURIComponent(searchQuery)}"`
+      }
+    }
+  }
+
+  // Handle search page form submission
+  const searchPageForm = document.querySelector(".search-page-form")
+  if (searchPageForm) {
+    searchPageForm.addEventListener("submit", (e) => {
+      const input = searchPageForm.querySelector('input[name="q"]')
+      if (input && !input.value.trim()) {
+        e.preventDefault()
+      }
+      // Otherwise let it submit naturally
+    })
+  }
+})
+
+// ================================================================
+// 19. INITIALIZATION
 // ================================================================
 
 console.log("[v0] NDWA Static Pages JavaScript initialized")

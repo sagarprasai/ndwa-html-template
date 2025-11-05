@@ -14,8 +14,41 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main" class="skip-link">Skip to main content</a>
     
-    <!-- Header -->
-    <header class="header">
+    <!-- Sticky Header Wrapper -->
+    <div class="sticky-header-wrapper">
+        <!-- Top Header Bar -->
+        <div class="top-header-bar">
+            <div class="top-header-content">
+                <div class="top-header-left">
+                    <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+                <div class="top-header-right">
+                    <a href="vacancy.html" class="top-header-link">
+                        <i class="fas fa-briefcase top-header-link-icon"></i>
+                        <span>Vacancy</span>
+                    </a>
+                    <a href="contact.html" class="top-header-link">
+                        <i class="fas fa-heart top-header-link-icon"></i>
+                        <span>Donate</span>
+                    </a>
+                    <a href="contact.html" class="top-header-link">
+                        <i class="fas fa-envelope top-header-link-icon"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <header class="header">
         <div class="header-content">
             <div class="header-left">
                 <a href="index.html" class="logo" aria-label="NDWA Home">
@@ -58,6 +91,7 @@
                             <li><a href="projects.html">Strategic Approach</a></li>
                             <li><a href="projects.html">Program Areas</a></li>
                             <li><a href="projects.html">Working Modality</a></li>
+                            <li><a href="success-story.html">Success Story</a></li>
                         </ul>
                     </li>
                     <li class="menu-item dropdown">
@@ -73,14 +107,14 @@
                     <li class="menu-item">
                         <a href="news-events.html">News & Events</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="contact.html">Contact</a>
-                    </li>
                 </ul>
                 </div>
             </nav>
 
             <div class="header-right">
+                <button class="search-icon-btn" id="searchIconBtn" aria-label="Open search" aria-expanded="false" aria-controls="searchModal">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
                 <select class="language-select" id="languageSelect" aria-label="Language">
                     <option value="en">English</option>
                     <option value="ne">नेपाली</option>
@@ -93,6 +127,77 @@
             </div>
         </div>
     </header>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" aria-hidden="true">
+        <div class="search-modal-overlay" id="searchModalOverlay" aria-label="Close search"></div>
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 class="search-modal-title" id="searchModalTitle">Search</h2>
+                <button class="search-modal-close" id="searchModalClose" aria-label="Close search modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="search-modal-body">
+                <form class="search-form" id="searchForm" role="search" action="search.html" method="get">
+                    <div class="search-input-wrapper">
+                        <label for="searchInput" class="sr-only">Search</label>
+                        <input 
+                            type="search" 
+                            id="searchInput" 
+                            name="q"
+                            class="search-input" 
+                            placeholder="Search for articles, projects, publications..." 
+                            autocomplete="off"
+                            aria-label="Search input"
+                        >
+                        <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="popular-searches">
+                    <h3 class="popular-searches-title">Popular Searches</h3>
+                    <div class="popular-searches-list" role="list">
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Women with Disabilities">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Women with Disabilities</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Advocacy Programs">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Advocacy Programs</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: GBV Prevention">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>GBV Prevention</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Economic Empowerment">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Economic Empowerment</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Training Workshops">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Training Workshops</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Success Stories">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Success Stories</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Publications">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Publications</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: News & Events">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>News & Events</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main id="main" role="main" tabindex="-1">
@@ -337,6 +442,48 @@
                         <div class="stat-card-content">
                             <div class="stat-card-value">300+</div>
                             <div class="stat-card-label">Training Sessions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <h2 class="section-title" id="testimonials-heading">Testimonials</h2>
+                <p class="section-subtitle">Hear from those whose lives have been impacted by our work</p>
+
+                <div class="testimonials-container">
+                    <div class="testimonial-card testimonial-text-card">
+                        <div class="testimonial-quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            I have been able to see the positive changes in the community through the work that I do and I'm able to see things from a bigger picture.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2024/12/Meena-paudel-2-e1756287816900.jpg" alt="मीना पौडेल" class="testimonial-author-image">
+                            <div class="testimonial-author-info">
+                                <h4 class="testimonial-author-name">मीना पौडेल</h4>
+                                <p class="testimonial-author-role">काठमाडौं, नेपाल</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card testimonial-text-card">
+                        <div class="testimonial-quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            NDWA has empowered me to become a leader in my community. The support and training I received have transformed not just my life, but the lives of many women with disabilities around me.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://www.ndwa.org.np/wp-content/uploads/2024/12/Shovajee-e1756287670445.jpg" alt="शोभा बिस्ट" class="testimonial-author-image">
+                            <div class="testimonial-author-info">
+                                <h4 class="testimonial-author-name">शोभा बिस्ट</h4>
+                                <p class="testimonial-author-role">चितवन, नेपाल</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -705,11 +852,12 @@
 
                 <div class="footer-section">
                     <h4 class="footer-title">Contact</h4>
-                        <address class="footer-contact">
-                            <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-                            <p><i class="fas fa-phone"></i> Helpline: <a href="tel:9801571225">9801571225 (Toll Free)</a></p>
-                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@ndwa.org.np">info@ndwa.org.np</a></p>
-                        </address>
+                    <address class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Address: PO Box 1775, House no 37, Kalopul Marga, Kalopul, Kathmandu, Nepal</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ndwa.2009@gmail.com">ndwa.2009@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+977-1-4535131">01-4535131</a>, <a href="tel:+977-1-4538342">01-4538342</a></p>
+                        <p><i class="fas fa-mobile-alt"></i> GBV Helpline: <a href="tel:9801571225">9801571225</a></p>
+                    </address>
                 </div>
 
                 <div class="footer-section">

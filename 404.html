@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | NDWA</title>
+    <link rel="icon" type="image/png" href="images/ndwa.png">
+    <link rel="shortcut icon" type="image/png" href="images/ndwa.png">
+    <link rel="apple-touch-icon" href="images/ndwa.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Sticky Header Wrapper -->
+    <div class="sticky-header-wrapper">
+        <!-- Top Header Bar -->
+        <div class="top-header-bar">
+            <div class="top-header-content">
+                <div class="top-header-left">
+                    <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+                <div class="top-header-right">
+                    <a href="vacancy.html" class="top-header-link">
+                        <i class="fas fa-briefcase top-header-link-icon"></i>
+                        <span>Vacancy</span>
+                    </a>
+                    <a href="contact.html" class="top-header-link">
+                        <i class="fas fa-heart top-header-link-icon"></i>
+                        <span>Donate</span>
+                    </a>
+                    <a href="contact.html" class="top-header-link">
+                        <i class="fas fa-envelope top-header-link-icon"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="NDWA Home">
+                    <img src="https://www.ndwa.org.np/wp-content/themes/kuorinka/images/ndwa.png" alt="NDWA Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">NDWA</span>
+                        <span class="logo-subtitle">Nepal Disabled Women Association</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <!-- Mobile Menu Header -->
+                <div class="mobile-menu-header">
+                    <h2 class="mobile-menu-title">Explore NDWA</h2>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Content -->
+                <div class="mobile-menu-content">
+                    <ul class="menu-items">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="about.html">Vision, Mission & Objectives</a></li>
+                            <li><a href="about.html">Organization & Management</a></li>
+                            <li><a href="executive-board.html">Executive Board</a></li>
+                            <li><a href="staffs.html">Staffs</a></li>
+                            <li><a href="organization-timeline.html">Organization Timeline</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="projects.html" class="dropdown-toggle">Our Work</a>
+                        <ul class="submenu">
+                            <li><a href="projects.html">Strategic Approach</a></li>
+                            <li><a href="projects.html">Program Areas</a></li>
+                            <li><a href="projects.html">Working Modality</a></li>
+                            <li><a href="success-story.html">Success Story</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="photo-gallery.html" class="dropdown-toggle">Gallery</a>
+                        <ul class="submenu">
+                            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+                            <li><a href="video-gallery.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="publications.html">Publications</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-events.html">News & Events</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+
+            <div class="header-right">
+                <button class="search-icon-btn" id="searchIconBtn" aria-label="Open search" aria-expanded="false" aria-controls="searchModal">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                <select class="language-select" id="languageSelect" aria-label="Language">
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                </select>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" aria-hidden="true">
+        <div class="search-modal-overlay" id="searchModalOverlay" aria-label="Close search"></div>
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 class="search-modal-title" id="searchModalTitle">Search</h2>
+                <button class="search-modal-close" id="searchModalClose" aria-label="Close search modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="search-modal-body">
+                <form class="search-form" id="searchForm" role="search" action="search.html" method="get">
+                    <div class="search-input-wrapper">
+                        <label for="searchInput" class="sr-only">Search</label>
+                        <input 
+                            type="search" 
+                            id="searchInput" 
+                            name="q"
+                            class="search-input" 
+                            placeholder="Search for articles, projects, publications..." 
+                            autocomplete="off"
+                            aria-label="Search input"
+                        >
+                        <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="popular-searches">
+                    <h3 class="popular-searches-title">Popular Searches</h3>
+                    <div class="popular-searches-list" role="list">
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Women with Disabilities">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Women with Disabilities</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Advocacy Programs">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Advocacy Programs</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: GBV Prevention">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>GBV Prevention</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Economic Empowerment">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Economic Empowerment</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Training Workshops">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Training Workshops</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Success Stories">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Success Stories</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: Publications">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>Publications</span>
+                        </button>
+                        <button class="popular-search-tag" role="listitem" aria-label="Search for: News & Events">
+                            <i class="fas fa-tag" aria-hidden="true"></i>
+                            <span>News & Events</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main" role="main" tabindex="-1">
+        <!-- 404 Error Section -->
+        <section class="error-404-section">
+            <div class="container">
+                <div class="error-404-content">
+                    <div class="error-404-icon">
+                        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="error-404-title">404</h1>
+                    <h2 class="error-404-subtitle">Page Not Found</h2>
+                    <p class="error-404-description">
+                        We're sorry, but the page you're looking for doesn't exist or has been moved.
+                    </p>
+                    <p class="error-404-description-secondary">
+                        The page may have been deleted, renamed, or the URL might be incorrect.
+                    </p>
+                    
+                    <div class="error-404-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            Go to Homepage
+                        </a>
+                        <button class="btn btn-outline-white" id="errorSearchBtn">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            Search Site
+                        </button>
+                    </div>
+
+                    <div class="error-404-helpful-links">
+                        <h3 class="helpful-links-title">You might be looking for:</h3>
+                        <div class="helpful-links-grid">
+                            <a href="about.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                </div>
+                                <h4>About Us</h4>
+                                <p>Learn about NDWA's mission and vision</p>
+                            </a>
+                            <a href="projects.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-briefcase" aria-hidden="true"></i>
+                                </div>
+                                <h4>Our Work</h4>
+                                <p>Explore our programs and initiatives</p>
+                            </a>
+                            <a href="publications.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </div>
+                                <h4>Publications</h4>
+                                <p>Browse reports and resources</p>
+                            </a>
+                            <a href="news-events.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-newspaper" aria-hidden="true"></i>
+                                </div>
+                                <h4>News & Events</h4>
+                                <p>Stay updated with latest news</p>
+                            </a>
+                            <a href="contact.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <h4>Contact Us</h4>
+                                <p>Get in touch with our team</p>
+                            </a>
+                            <a href="photo-gallery.html" class="helpful-link-card">
+                                <div class="helpful-link-icon">
+                                    <i class="fas fa-images" aria-hidden="true"></i>
+                                </div>
+                                <h4>Gallery</h4>
+                                <p>View photos and videos</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://www.ndwa.org.np/wp-content/themes/kuorinka/images/ndwa.png" alt="NDWA Logo" class="footer-logo-img">
+                        <span class="footer-org-name">Nepal Disabled Women Association</span>
+                    </div>
+                    <p class="footer-description">
+                        Defending and advancing the rights of women and girls with disabilities in Nepal.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <address class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Address: PO Box 1775, House no 37, Kalopul Marga, Kalopul, Kathmandu, Nepal</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ndwa.2009@gmail.com">ndwa.2009@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+977-1-4535131">01-4535131</a>, <a href="tel:+977-1-4538342">01-4538342</a></p>
+                        <p><i class="fas fa-mobile-alt"></i> GBV Helpline: <a href="tel:9801571225">9801571225</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Our Work</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Subscribe</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 NDWA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="footer-developer">
+                <p>Website Developed by: <a href="https://www.diversepatterns.com.np" target="_blank" rel="noopener noreferrer">Diverse Patterns</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Handle search button click on 404 page
+        document.addEventListener("DOMContentLoaded", () => {
+            const errorSearchBtn = document.getElementById("errorSearchBtn")
+            const searchIconBtn = document.getElementById("searchIconBtn")
+            
+            if (errorSearchBtn && searchIconBtn) {
+                errorSearchBtn.addEventListener("click", () => {
+                    searchIconBtn.click()
+                })
+            }
+        })
+    </script>
+</body>
+</html>
+
